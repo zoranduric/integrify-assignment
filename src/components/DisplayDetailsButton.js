@@ -1,13 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-//import { usePrams } from "react-router-dom";
 
-const DisplayDetalisButton = ({ userCard }) => {
+import { useNavigate, Link } from "react-router-dom";
+
+const DisplayDetailsButton = ({ userCard }) => {
   let navigate = useNavigate();
-  //const {} = usePrams();
+
   const handleClick = (event) => {
-    //  event.preventDefault();
-    console.log(event.target.value);
     let id = event.target.value;
     navigate(`/user/${id}`);
   };
@@ -21,4 +19,4 @@ const DisplayDetalisButton = ({ userCard }) => {
   );
 };
 
-export default DisplayDetalisButton;
+export default DisplayDetailsButton;

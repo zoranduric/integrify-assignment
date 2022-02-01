@@ -1,5 +1,5 @@
 import React from "react";
-import DisplayDetalisButton from "./DisplayDetalisButton";
+import DisplayDetailsButton from "./DisplayDetailsButton";
 
 const DisplayUsers = ({ userData }) => {
   return (
@@ -10,7 +10,7 @@ const DisplayUsers = ({ userData }) => {
         <p className="userCard__Website"> {userData.website} </p>
       </div>
 
-      <DisplayDetalisButton userCard={userData}></DisplayDetalisButton>
+      <DisplayDetailsButton userCard={userData}></DisplayDetailsButton>
     </div>
   );
 };
