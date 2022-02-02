@@ -20,7 +20,6 @@ function App() {
     })();
   }, []);
 
-  console.log(users);
   return (
     <div>
       <div className="App">

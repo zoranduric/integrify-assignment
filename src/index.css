@@ -35,7 +35,7 @@ code {
   margin: 2rem 2rem 2rem 0;
   padding: 1.5rem;
   transition: transform 0.3s ease;
-  cursor: pointer;
+
   border-radius: 5%;
 }
 .userCard:hover {
@@ -51,4 +51,23 @@ code {
 }
 .userCard__Website {
   color: #0077b6;
+}
+.className_container {
+  display: flex;
+  justify-content: center;
+}
+.userDetails {
+  padding: 25px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+.userDetails span {
+  font-weight: 600;
+  padding: 0.3rem;
+}
+
+.userDetails p::before {
+  content: "-";
 }
