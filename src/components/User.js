@@ -28,7 +28,6 @@ const User = () => {
               <span>Name: </span> {user.name}
             </p>
             <p>
-              {" "}
               <span>Username: </span> {user.username}
             </p>
             <p>
