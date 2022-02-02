@@ -14,7 +14,7 @@ const User = () => {
         updateUser(response.data);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <p>loading please wait</p>;
