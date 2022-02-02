@@ -4,12 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: rgb(246, 246, 248);
-  background: linear-gradient(
-    0deg,
-    rgba(246, 246, 248, 1) 0%,
-    rgba(202, 240, 248, 1) 46%
-  );
 }
 
 .buttonContainer {
