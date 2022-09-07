@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 
 const UserContext = createContext();
 export const UsersProvider = ({ children }) => {
