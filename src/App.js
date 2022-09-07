@@ -1,31 +1,23 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useState, useEffect, useContext } from 'react';
 import DisplayUsers from './components/DisplayUsers';
+
+import UsersContext from './context/UsersContext';
+
 function App() {
-  const [users, updateUser] = useState([]);
-  //load users on page load
+  const { usersAndLoading, fetchUsers } = useContext(UsersContext);
+
   useEffect(() => {
-    (async () => {
-      let userData;
-      try {
-        const response = await fetch(
-          'https://jsonplaceholder.typicode.com/users'
-        );
-        userData = await response.json();
-      } catch (error) {
-        console.log(error);
-        userData = [];
-      }
-      updateUser(userData);
-    })();
-  }, []);
+    fetchUsers();
+  });
+
+  if (usersAndLoading.isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div>
       <div className='App'>
-        {users.map((user, index) => (
-          <DisplayUsers userData={user} key={user.id}></DisplayUsers>
-        ))}
+        {!usersAndLoading.isLoading && <DisplayUsers />}
       </div>
     </div>
   );

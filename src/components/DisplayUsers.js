@@ -1,16 +1,25 @@
-import React from "react";
-import DisplayDetailsButton from "./DisplayDetailsButton";
+import DisplayDetailsButton from './DisplayDetailsButton';
+import { useContext } from 'react';
+import UsersContext from '../context/UsersContext';
 
-const DisplayUsers = ({ userData }) => {
+const DisplayUsers = () => {
+  const { usersAndLoading } = useContext(UsersContext);
+  const { users } = usersAndLoading;
+
   return (
-    <div className="userCard">
-      <div className="userCard_Detalis">
-        <p className="userCard__Name">{userData.name}</p>
-        <p className="userCard__Username">@{userData.username}</p>
-        <p className="userCard__Website"> {userData.website} </p>
-      </div>
-
-      <DisplayDetailsButton userCard={userData}></DisplayDetailsButton>
+    <div className='container'>
+      {users.map((user) => (
+        <div className='userCard' key={user.id}>
+          <div className='userCard_Detalis'>
+            <div key={user.id}>
+              <p className='userCard__Name'>{user.name}</p>
+              <p className='userCard__Username'>@{user.username}</p>
+              <p className='userCard__Website'> {user.website} </p>
+            </div>
+          </div>
+          <DisplayDetailsButton id={user.id} />
+        </div>
+      ))}
     </div>
   );
 };
