@@ -10,7 +10,6 @@ export const UsersProvider = ({ children }) => {
   const fetchUsers = async () => {
     let userData;
     if (usersAndLoading.users.length === 0) {
-      console.log('fetching users');
       try {
         const response = await fetch(
           'https://jsonplaceholder.typicode.com/users'
@@ -24,7 +23,6 @@ export const UsersProvider = ({ children }) => {
       }
       //update users state
     }
-    console.log(' users are there ');
   };
 
   return (
